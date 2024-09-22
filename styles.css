@@ -1,0 +1,167 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4747;
+}
+
+/* Banner/Hero */
+.banner {
+    height: 80vh;
+    background: url('hero_image.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ff4747;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff1f1f;
+}
+
+/* Pourquoi Epic Sucks Section */
+.epic-section {
+    padding: 60px 0;
+    background-color: #2c2c2c;
+    text-align: center;
+}
+
+.epic-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.clash-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.clash-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 22%;
+}
+
+.clash-card h3 {
+    font-size: 1.5rem;
+    color: #ff4747;
+    margin-bottom: 10px;
+}
+
+.clash-card p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Communauté Section */
+.community-section {
+    padding: 60px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.community-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#community-count {
+    font-size: 2rem;
+    color: #ff4747;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    color: #888;
+}
+
+footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer .social-links li {
+    margin-left: 20px;
+}
+
+footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #ff4747;
+}
