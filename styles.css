@@ -8,8 +8,8 @@
 /* Body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1e1e1e;
-    color: #fff;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 /* Navbar */
@@ -17,14 +17,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #111;
-    padding: 20px;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #fff;
+    color: #ecf0f1;
 }
 
 .nav-links {
@@ -38,7 +39,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: #ecf0f1;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -49,101 +50,126 @@ body {
 
 /* Banner/Hero */
 .banner {
-    height: 80vh;
-    background: url('hero_image.jpg') no-repeat center center/cover;
+    height: 75vh;
+    background: url('img/hero_image.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #fff;
+    padding: 20px;
 }
 
 .banner h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
 }
 
 .banner p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
 }
 
 .cta-button {
-    background-color: #ff4747;
+    background-color: #e74c3c;
     color: #fff;
-    padding: 15px 30px;
+    padding: 15px 25px;
     font-size: 1.2rem;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: #ff1f1f;
+    background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 /* Pourquoi Epic Sucks Section */
 .epic-section {
-    padding: 60px 0;
-    background-color: #2c2c2c;
+    padding: 60px 20px;
+    background-color: #fff;
     text-align: center;
 }
 
 .epic-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
 }
 
 .clash-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
 .clash-card {
-    background-color: #333;
-    padding: 20px;
+    background-color: #f1f1f1;
+    padding: 25px;
     border-radius: 10px;
     width: 22%;
+    margin: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.clash-card:hover {
+    transform: translateY(-8px);
 }
 
 .clash-card h3 {
-    font-size: 1.5rem;
-    color: #ff4747;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
 }
 
 .clash-card p {
     font-size: 1.1rem;
-    color: #ccc;
+    color: #777;
 }
 
 /* Communauté Section */
 .community-section {
-    padding: 60px 0;
-    background-color: #1e1e1e;
+    padding: 60px 20px;
+    background-color: #34495e;
+    color: #ecf0f1;
     text-align: center;
 }
 
 .community-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
 }
 
 #community-count {
-    font-size: 2rem;
-    color: #ff4747;
+    font-size: 2.5rem;
+    color: #e74c3c;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Footer */
 footer {
-    background-color: #111;
-    padding: 20px;
+    background-color: #2c3e50;
+    padding: 25px;
     text-align: center;
+    color: #ecf0f1;
 }
 
 footer p {
-    color: #888;
+    margin-bottom: 15px;
 }
 
 footer .social-links {
@@ -158,10 +184,11 @@ footer .social-links li {
 }
 
 footer .social-links a {
-    color: #fff;
+    color: #ecf0f1;
     text-decoration: none;
 }
 
 footer .social-links a:hover {
-    color: #ff4747;
+    color: #e74c3c;
 }
+
