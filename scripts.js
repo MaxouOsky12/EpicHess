@@ -1,4 +1,4 @@
-let communityCount = localStorage.getItem('communityCount') || 5000; // Compteur initial, sauvegardé localement
+let communityCount = localStorage.getItem('communityCount') || 1; // Compteur initial, sauvegardé localement
 
 document.addEventListener('DOMContentLoaded', function() {
     updateCounter();
