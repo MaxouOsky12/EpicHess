@@ -3,85 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rejoins Epic Hess, la communauté contre Epic Games et leurs pratiques douteuses. Unissons-nous pour un meilleur futur !">
-    <meta name="keywords" content="Epic Hess, Anti-Epic Games, Fortnite, communauté, boycott, justice">
-    <meta name="author" content="Epic Hess Team">
-    <meta property="og:title" content="Epic Hess - Rejoins la Révolution Anti-Epic Games">
-    <meta property="og:description" content="Unissons-nous contre les pratiques douteuses d'Epic Games. Rejoins la communauté Anti-Epic !">
-    <meta property="og:image" content="epichess.png">
-    <meta property="og:url" content="https://epichess.com">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" href="img/epichess.png">
-    <title>Epic Hess - Rejoins la Révolution Anti-Epic Games</title>
+    <title>Epic Hess - La Révolution Contre Epic Games</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <!-- Google Fonts pour des polices plus modernes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-
-    <!-- Navbar -->
+    <!-- Navbar avec un design attractif -->
     <nav class="navbar">
-        <div class="logo">Epic Hess</div>
+        <img class="logo" src="img/epichess.png" alt="Epic Hess Logo">
         <ul class="nav-links">
-            <li><a href="#epic-section">Pourquoi Epic Sucks</a></li>
-            <li><a href="#community">La Communauté</a></li>
-            <li><a href="#join-us">Rejoindre la Révolution</a></li>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Pourquoi Epic Sucks</a></li>
+            <li><a href="#">Rejoindre la Révolution</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header>
-        <div class="banner">
-            <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
-            <p>Unissons-nous contre les abus d'Epic Games !</p>
-            <a href="#epic-section"><button class="cta-button">Découvrez pourquoi Epic exploite !</button></a>
-        </div>
+    <!-- Header avec message d'accueil amélioré -->
+    <header class="hero">
+        <h1>Bienvenue sur Epic Hess</h1>
+        <p>Parce qu'Epic Games ne respecte pas ses joueurs, rejoignez la communauté qui dit NON !</p>
+        <button id="joinBtn">Rejoindre la Révolution</button>
+        <p id="memberCount">Déjà <span id="counter">0</span> membres ont rejoint la lutte !</p>
     </header>
 
-    <!-- Pourquoi Epic Sucks Section -->
-    <section id="epic-section" class="epic-section">
-        <div class="container">
-            <h2>Pourquoi Epic Games est une Catastrophe ?</h2>
-            <div class="clash-content">
-                <div class="clash-card">
-                    <h3>Politique de Bans Injustifiée</h3>
-                    <p>Bannissement arbitraire des joueurs sans explication.</p>
-                </div>
-                <div class="clash-card">
-                    <h3>Microtransactions Abusives</h3>
-                    <p>Manipulation des joueurs avec des systèmes de paiement abusifs.</p>
-                </div>
-                <div class="clash-card">
-                    <h3>Support Client Inexistant</h3>
-                    <p>Aucune réponse de leur support client. Nous ne sommes que des numéros pour eux.</p>
-                </div>
-                <div class="clash-card">
-                    <h3>Exploitation des Données</h3>
-                    <p>Collecte massive de données personnelles sans transparence.</p>
-                </div>
+    <!-- Section de commentaires -->
+    <section class="comments">
+        <h2>Ce que les joueurs pensent de Epic Games</h2>
+        <div class="comment-section">
+            <form id="commentForm">
+                <textarea id="commentInput" placeholder="Lâche ton avis sur Epic Games"></textarea>
+                <button type="submit">Poster</button>
+            </form>
+            <div id="commentsDisplay">
+                <!-- Les commentaires apparaîtront ici -->
             </div>
         </div>
     </section>
 
-    <!-- Rejoindre la Communauté Section -->
-    <section id="community" class="community-section">
-        <div class="container">
-            <h2>Rejoins la Communauté Anti-Epic</h2>
-            <p>Nous sommes déjà <span id="community-count">1</span> à avoir rejoint le mouvement.</p>
-            <button id="join-button" class="cta-button">Rejoindre la Révolution</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>Epic Hess © 2024 - Tous droits réservés.</p>
-            <ul class="social-links">
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Facebook</a></li>
-            </ul>
-        </div>
+        <p>&copy; 2024 Epic Hess. Unis contre Epic Games.</p>
     </footer>
 
+    <script src="app.js"></script>
 </body>
 </html>
