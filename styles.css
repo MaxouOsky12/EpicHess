@@ -1,3 +1,13 @@
+/* Variables de Couleur */
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #1a1a1a;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --footer-background: #2c3e50;
+    --footer-text: #ecf0f1;
+}
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -8,8 +18,8 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -18,9 +28,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1a1a;
+    background-color: var(--secondary-color);
     padding: 20px 40px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -31,6 +41,7 @@ body {
     font-weight: bold;
     color: #fff;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links {
@@ -48,13 +59,13 @@ body {
     font-weight: 500;
     font-size: 1.1rem;
     padding: 10px 20px;
-    transition: background 0.3s ease, color 0.3s ease;
     border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: var(--primary-color);
+    transform: scale(1.05);
 }
 
 /* Banner/Hero */
@@ -75,29 +86,32 @@ body {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .banner p {
     font-size: 1.5rem;
     margin-bottom: 30px;
     max-width: 700px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
-    background-color: #e74c3c;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2rem;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
 }
 
 .cta-button:hover {
     background-color: #c0392b;
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
 }
 
 /* Pourquoi Epic Sucks Section */
@@ -109,10 +123,11 @@ body {
 
 .epic-section h2 {
     font-size: 3rem;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    font-weight: bold;
 }
 
 .clash-content {
@@ -128,7 +143,7 @@ body {
     border-radius: 10px;
     width: 22%;
     margin: 15px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -139,8 +154,9 @@ body {
 
 .clash-card h3 {
     font-size: 1.8rem;
-    color: #e74c3c;
+    color: var(--primary-color);
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .clash-card p {
@@ -163,7 +179,7 @@ body {
 
 #community-count {
     font-size: 3rem;
-    color: #e74c3c;
+    color: var(--primary-color);
     animation: fadeIn 0.5s ease-in-out;
     font-weight: bold;
 }
@@ -174,20 +190,21 @@ body {
 }
 
 #join-button {
-    background-color: #e74c3c;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 15px 30px;
     font-size: 1.2rem;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
 }
 
 #join-button:hover {
     background-color: #c0392b;
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
 }
 
 /* Animations */
@@ -202,10 +219,10 @@ body {
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
+    background-color: var(--footer-background);
     padding: 40px 0;
     text-align: center;
-    color: #ecf0f1;
+    color: var(--footer-text);
 }
 
 footer p {
@@ -225,13 +242,12 @@ footer .social-links li {
 }
 
 footer .social-links a {
-    color: #ecf0f1;
+    color: var(--footer-text);
     font-size: 1.2rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer .social-links a:hover {
-    color: #e74c3c;
+    color: var(--primary-color);
 }
-
