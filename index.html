@@ -164,28 +164,35 @@
             document.getElementById('pas-certain-percentage').innerText = pasCertainPercentage + '%';
         }
 
-        // Gestion des votes
         document.getElementById('vote-button').addEventListener('click', function() {
-            const selectedOpinion = document.querySelector('input[name="opinion"]:checked');
-            if (!selectedOpinion) {
-                alert("Veuillez sélectionner une option avant de voter.");
-                return;
+            if (localStorage.getItem('hasVoted')) {
+                alert("Vous avez déjà voté !");
+                return; // Ne permet pas de voter à nouveau
             }
 
-            const voteValue = selectedOpinion.value;
-            votes[voteValue]++;
-            localStorage.setItem('juste', votes.juste);
-            localStorage.setItem('injuste', votes.injuste);
-            localStorage.setItem('pas certain', votes['pas certain']);
-            
-            updateResults();
-            
-            // Affichage des résultats
-            document.getElementById('poll-results').style.display = 'block';
-            
-            alert("Merci pour votre vote !");
+            const selectedOption = document.querySelector('input[name="opinion"]:checked');
+
+            if (selectedOption) {
+                const voteValue = selectedOption.value;
+                votes[voteValue]++;
+
+                // Sauvegarde des votes dans le localStorage
+                localStorage.setItem('juste', votes.juste);
+                localStorage.setItem('injuste', votes.injuste);
+                localStorage.setItem('pas certain', votes['pas certain']);
+                localStorage.setItem('hasVoted', true); // Enregistre que l'utilisateur a voté
+
+                updateResults();
+
+                // Affichage des résultats
+                document.getElementById('poll-results').style.display = 'block';
+                alert("Merci pour votre vote !");
+            } else {
+                alert("Veuillez sélectionner une option avant de voter.");
+            }
         });
     </script>
 
 </body>
 </html>
+
