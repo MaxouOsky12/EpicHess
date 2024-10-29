@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rejoins Epic Hess, la communauté contre Epic Games et leurs pratiques douteuses. Unissons-nous pour un meilleur futur !">
+    <meta name="keywords" content="Epic Hess, Anti-Epic Games, Fortnite, communauté, boycott, justice">
+    <meta name="author" content="Epic Hess Team">
+    <meta property="og:title" content="Epic Hess - Rejoins la Révolution Anti-Epic Games">
+    <meta property="og:description" content="Unissons-nous contre les pratiques douteuses d'Epic Games. Rejoins la communauté Anti-Epic !">
+    <meta property="og:image" content="img/epic_hess_banner.png">
+    <meta property="og:url" content="https://epichess.com">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <title>Epic Hess - Rejoins la Révolution Anti-Epic Games</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +24,6 @@
         <ul class="nav-links">
             <li><a href="#epic-section">Pourquoi Epic Sucks</a></li>
             <li><a href="#community">La Communauté</a></li>
-            <li><a href="#poll">Sondage</a></li>
             <li><a href="#join-us">Rejoindre la Révolution</a></li>
         </ul>
     </nav>
@@ -53,31 +62,6 @@
         </div>
     </section>
 
-    <!-- Sondage Section -->
-    <section id="poll" class="poll-section">
-        <div class="container">
-            <h2>Sondage : Que pensez-vous d'Epic Games ?</h2>
-            <form id="vote-form">
-                <label>
-                    <input type="radio" name="opinion" value="juste"> Juste
-                </label>
-                <label>
-                    <input type="radio" name="opinion" value="injuste"> Injuste
-                </label>
-                <label>
-                    <input type="radio" name="opinion" value="pas_certain"> Pas certain
-                </label>
-                <button type="button" id="vote-button" class="cta-button">Voter</button>
-            </form>
-            <div id="poll-results" style="display: none;">
-                <h3>Résultats du Sondage :</h3>
-                <p>Justes : <span id="juste-count">0</span> (<span id="juste-percentage">0%</span>)</p>
-                <p>Injustes : <span id="injuste-count">0</span> (<span id="injuste-percentage">0%</span>)</p>
-                <p>Pas certain : <span id="pas-certain-count">0</span> (<span id="pas-certain-percentage">0%</span>)</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Rejoindre la Communauté Section -->
     <section id="community" class="community-section">
         <div class="container">
@@ -91,6 +75,7 @@
     <footer>
         <div class="container">
             <p>Epic Hess © 2024 - Tous droits réservés.</p>
+            <p id="visitor-count">Visiteurs : 0</p> <!-- Compteur de visiteurs -->
             <ul class="social-links">
                 <li><a href="#">Twitch</a></li>
                 <li><a href="#">Youtube</a></li>
@@ -98,6 +83,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
