@@ -24,6 +24,7 @@
         <ul class="nav-links">
             <li><a href="#epic-section">Pourquoi Epic Sucks</a></li>
             <li><a href="#community">La Communauté</a></li>
+            <li><a href="#poll">Sondage</a></li>
             <li><a href="#join-us">Rejoindre la Révolution</a></li>
         </ul>
     </nav>
@@ -62,27 +63,28 @@
         </div>
     </section>
 
-    <!-- Section Sondage -->
-    <section id="poll-section" class="poll-section">
-        <h2>Que pensez-vous des pratiques d'Epic Games ?</h2>
-        <form id="poll-form">
-            <label>
-                <input type="radio" name="opinion" value="juste"> Justes
-            </label><br>
-            <label>
-                <input type="radio" name="opinion" value="injuste"> Injustes
-            </label><br>
-            <label>
-                <input type="radio" name="opinion" value="pas certain"> Pas certain
-            </label><br>
-            <button type="button" id="vote-button" class="cta-button">Voter</button>
-        </form>
-
-        <div id="poll-results" style="display: none;">
-            <h3>Résultats du Sondage :</h3>
-            <p>Justes : <span id="juste-count">0</span></p>
-            <p>Injustes : <span id="injuste-count">0</span></p>
-            <p>Pas certain : <span id="pas-certain-count">0</span></p>
+    <!-- Sondage Section -->
+    <section id="poll" class="poll-section">
+        <div class="container">
+            <h2>Sondage : Que pensez-vous d'Epic Games ?</h2>
+            <form>
+                <label>
+                    <input type="radio" name="opinion" value="juste"> Juste
+                </label>
+                <label>
+                    <input type="radio" name="opinion" value="injuste"> Injuste
+                </label>
+                <label>
+                    <input type="radio" name="opinion" value="pas certain"> Pas certain
+                </label>
+                <button type="button" id="vote-button" class="cta-button">Voter</button>
+            </form>
+            <div id="poll-results" style="display: none;">
+                <h3>Résultats du Sondage :</h3>
+                <p>Justes : <span id="juste-count">0</span> (<span id="juste-percentage">0%</span>)</p>
+                <p>Injustes : <span id="injuste-count">0</span> (<span id="injuste-percentage">0%</span>)</p>
+                <p>Pas certain : <span id="pas-certain-count">0</span> (<span id="pas-certain-percentage">0%</span>)</p>
+            </div>
         </div>
     </section>
 
@@ -106,6 +108,84 @@
         </div>
     </footer>
 
+    <script>
+        // Compteur de la communauté
+        let communityCount = localStorage.getItem('communityCount') || 1; // Compteur initial sauvegardé localement
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCounter();
+            updateResults(); // Affiche les résultats du sondage au chargement
+        });
+
+        function updateCounter() {
+            const countElement = document.getElementById('community-count');
+            countElement.innerText = communityCount;
+        }
+
+        document.getElementById('join-button').addEventListener('click', function() {
+            communityCount++;
+            localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur dans le localStorage
+
+            const countElement = document.getElementById('community-count');
+            
+            // Animation du compteur
+            countElement.classList.remove('fadeIn');
+            void countElement.offsetWidth; // Force un reflow
+            countElement.classList.add('fadeIn');
+
+            countElement.innerText = communityCount;
+
+            alert("Merci d'avoir rejoint la communauté ! Nous sommes maintenant " + communityCount + " membres.");
+        });
+
+        // Sondage
+        let votes = {
+            juste: parseInt(localStorage.getItem('juste')) || 0,
+            injuste: parseInt(localStorage.getItem('injuste')) || 0,
+            'pas certain': parseInt(localStorage.getItem('pas certain')) || 0,
+        };
+
+        // Fonction pour mettre à jour l'affichage des résultats
+        function updateResults() {
+            const totalVotes = votes.juste + votes.injuste + votes['pas certain'];
+            
+            document.getElementById('juste-count').innerText = votes.juste;
+            document.getElementById('injuste-count').innerText = votes.injuste;
+            document.getElementById('pas-certain-count').innerText = votes['pas certain'];
+
+            // Calcul des pourcentages
+            const justePercentage = totalVotes > 0 ? ((votes.juste / totalVotes) * 100).toFixed(2) : 0;
+            const injustePercentage = totalVotes > 0 ? ((votes.injuste / totalVotes) * 100).toFixed(2) : 0;
+            const pasCertainPercentage = totalVotes > 0 ? ((votes['pas certain'] / totalVotes) * 100).toFixed(2) : 0;
+
+            // Affichage des pourcentages
+            document.getElementById('juste-percentage').innerText = justePercentage + '%';
+            document.getElementById('injuste-percentage').innerText = injustePercentage + '%';
+            document.getElementById('pas-certain-percentage').innerText = pasCertainPercentage + '%';
+        }
+
+        // Gestion des votes
+        document.getElementById('vote-button').addEventListener('click', function() {
+            const selectedOpinion = document.querySelector('input[name="opinion"]:checked');
+            if (!selectedOpinion) {
+                alert("Veuillez sélectionner une option avant de voter.");
+                return;
+            }
+
+            const voteValue = selectedOpinion.value;
+            votes[voteValue]++;
+            localStorage.setItem('juste', votes.juste);
+            localStorage.setItem('injuste', votes.injuste);
+            localStorage.setItem('pas certain', votes['pas certain']);
+            
+            updateResults();
+            
+            // Affichage des résultats
+            document.getElementById('poll-results').style.display = 'block';
+            
+            alert("Merci pour votre vote !");
+        });
+    </script>
+
 </body>
 </html>
-
