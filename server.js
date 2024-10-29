@@ -1,54 +1,53 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
 
-// Initialisation de l'application Express
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Middleware pour lire les données JSON et gérer les requêtes CORS
-app.use(bodyParser.json());
+// Middleware
 app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Connexion à la base de données MongoDB
-mongoose.connect('YOUR_MONGO_DB_CONNECTION_STRING', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Connecté à MongoDB'))
-    .catch((err) => console.log('Erreur de connexion à MongoDB:', err));
-
-// Schéma et modèle pour stocker les membres qui rejoignent la révolution
-const memberSchema = new mongoose.Schema({
-    name: String,
-    joinedAt: { type: Date, default: Date.now }
+// Endpoint pour récupérer les votes
+app.get('/api/votes', (req, res) => {
+    fs.readFile(path.join(__dirname, 'data', 'votes.json'), 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).send('Erreur lors de la récupération des votes.');
+            return;
+        }
+        res.json(JSON.parse(data));
+    });
 });
 
-const Member = mongoose.model('Member', memberSchema);
+// Endpoint pour voter
+app.post('/api/vote', (req, res) => {
+    const { vote } = req.body;
 
-// Route pour rejoindre la révolution (ajouter un membre)
-app.post('/join', async (req, res) => {
-    const { name } = req.body;
-    
-    try {
-        const newMember = new Member({ name });
-        await newMember.save();
+    fs.readFile(path.join(__dirname, 'data', 'votes.json'), 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).send('Erreur lors de la lecture des votes.');
+            return;
+        }
         
-        const memberCount = await Member.countDocuments();
-        res.json({ success: true, message: 'Bienvenue dans la révolution !', totalMembers: memberCount });
-    } catch (error) {
-        res.status(500).json({ success: false, message: 'Erreur lors de l\'inscription.' });
-    }
+        const votes = JSON.parse(data);
+        votes[vote]++;
+
+        fs.writeFile(path.join(__dirname, 'data', 'votes.json'), JSON.stringify(votes, null, 2), (err) => {
+            if (err) {
+                res.status(500).send('Erreur lors de l\'enregistrement du vote.');
+                return;
+            }
+            res.json({ message: 'Vote enregistré avec succès !', votes });
+        });
+    });
 });
 
-// Route pour obtenir le nombre total de membres
-app.get('/members', async (req, res) => {
-    try {
-        const memberCount = await Member.countDocuments();
-        res.json({ totalMembers: memberCount });
-    } catch (error) {
-        res.status(500).json({ success: false, message: 'Erreur lors de la récupération des membres.' });
-    }
+// Démarrer le serveur
+app.listen(PORT, () => {
+    console.log(`Serveur en écoute sur le port ${PORT}`);
 });
 
-// Lancer le serveur sur le port 3000
-app.listen(3000, () => {
-    console.log('Serveur lancé sur le port 3000');
-});
