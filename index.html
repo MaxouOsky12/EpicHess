@@ -62,6 +62,30 @@
         </div>
     </section>
 
+    <!-- Section Sondage -->
+    <section id="poll-section" class="poll-section">
+        <h2>Que pensez-vous des pratiques d'Epic Games ?</h2>
+        <form id="poll-form">
+            <label>
+                <input type="radio" name="opinion" value="juste"> Justes
+            </label><br>
+            <label>
+                <input type="radio" name="opinion" value="injuste"> Injustes
+            </label><br>
+            <label>
+                <input type="radio" name="opinion" value="pas certain"> Pas certain
+            </label><br>
+            <button type="button" id="vote-button" class="cta-button">Voter</button>
+        </form>
+
+        <div id="poll-results" style="display: none;">
+            <h3>Résultats du Sondage :</h3>
+            <p>Justes : <span id="juste-count">0</span></p>
+            <p>Injustes : <span id="injuste-count">0</span></p>
+            <p>Pas certain : <span id="pas-certain-count">0</span></p>
+        </div>
+    </section>
+
     <!-- Rejoindre la Communauté Section -->
     <section id="community" class="community-section">
         <div class="container">
@@ -84,3 +108,4 @@
 
 </body>
 </html>
+
