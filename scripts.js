@@ -36,9 +36,21 @@ let votes = {
 
 // Fonction pour mettre à jour l'affichage des résultats
 function updateResults() {
+    const totalVotes = votes.juste + votes.injuste + votes['pas certain'];
+    
     document.getElementById('juste-count').innerText = votes.juste;
     document.getElementById('injuste-count').innerText = votes.injuste;
     document.getElementById('pas-certain-count').innerText = votes['pas certain'];
+
+    // Calcul des pourcentages
+    const justePercentage = totalVotes > 0 ? ((votes.juste / totalVotes) * 100).toFixed(2) : 0;
+    const injustePercentage = totalVotes > 0 ? ((votes.injuste / totalVotes) * 100).toFixed(2) : 0;
+    const pasCertainPercentage = totalVotes > 0 ? ((votes['pas certain'] / totalVotes) * 100).toFixed(2) : 0;
+
+    // Affichage des pourcentages
+    document.getElementById('juste-percentage').innerText = justePercentage + '%';
+    document.getElementById('injuste-percentage').innerText = injustePercentage + '%';
+    document.getElementById('pas-certain-percentage').innerText = pasCertainPercentage + '%';
 }
 
 // Gestion des votes
@@ -62,4 +74,3 @@ document.getElementById('vote-button').addEventListener('click', function() {
     
     alert("Merci pour votre vote !");
 });
-
