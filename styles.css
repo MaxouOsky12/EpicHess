@@ -134,6 +134,33 @@ body {
     color: #bbb; /* Texte plus clair */
 }
 
+/* Sondage Section */
+.poll-section {
+    padding: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.poll-section h2 {
+    margin-bottom: 15px;
+}
+
+.poll-section form {
+    margin-bottom: 20px;
+}
+
+.poll-section label {
+    font-size: 1.2rem;
+}
+
+#poll-results h3 {
+    margin-top: 20px;
+    color: #e74c3c;
+}
+
 /* Communauté Section */
 .community-section {
     padding: 60px 20px;
@@ -206,3 +233,4 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #e74c3c;
 }
+
