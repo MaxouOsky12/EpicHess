@@ -1,54 +1,32 @@
+// server.js (Côté serveur avec Express)
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
 const fs = require('fs');
-const path = require('path');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+// Middleware pour analyser le JSON
+app.use(express.json());
 
-// Endpoint pour récupérer les votes
-app.get('/api/votes', (req, res) => {
-    fs.readFile(path.join(__dirname, 'data', 'votes.json'), 'utf8', (err, data) => {
-        if (err) {
-            res.status(500).send('Erreur lors de la récupération des votes.');
-            return;
-        }
-        res.json(JSON.parse(data));
-    });
+// Lire le compteur à partir d'un fichier
+let visitorCount = 0;
+
+if (fs.existsSync('count.txt')) {
+    visitorCount = parseInt(fs.readFileSync('count.txt', 'utf-8'), 10);
+}
+
+// API pour obtenir le nombre de visiteurs
+app.get('/api/visitors', (req, res) => {
+    res.json({ count: visitorCount });
 });
 
-// Endpoint pour voter
-app.post('/api/vote', (req, res) => {
-    const { vote } = req.body;
-
-    fs.readFile(path.join(__dirname, 'data', 'votes.json'), 'utf8', (err, data) => {
-        if (err) {
-            res.status(500).send('Erreur lors de la lecture des votes.');
-            return;
-        }
-        
-        const votes = JSON.parse(data);
-        if (votes[vote] !== undefined) {
-            votes[vote]++; // Incrémente le vote correspondant
-        }
-
-        fs.writeFile(path.join(__dirname, 'data', 'votes.json'), JSON.stringify(votes, null, 2), (err) => {
-            if (err) {
-                res.status(500).send('Erreur lors de l\'enregistrement du vote.');
-                return;
-            }
-            res.json({ message: 'Vote enregistré avec succès !', votes });
-        });
-    });
+// API pour incrémenter le nombre de visiteurs
+app.post('/api/visitors', (req, res) => {
+    visitorCount++;
+    fs.writeFileSync('count.txt', visitorCount.toString());
+    res.json({ count: visitorCount });
 });
 
 // Démarrer le serveur
 app.listen(PORT, () => {
-    console.log(`Serveur en écoute sur le port ${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
