@@ -37,14 +37,6 @@
         </div>
     </header>
 
-    <!-- Compteur de Visiteurs -->
-    <section id="visitor-counter" class="visitor-counter-section">
-        <div class="container">
-            <h2>Compteur de Visiteurs Mondial</h2>
-            <p>Nous avons actuellement <span id="visitor-count">0</span> visiteurs !</p>
-        </div>
-    </section>
-
     <!-- Pourquoi Epic Sucks Section -->
     <section id="epic-section" class="epic-section">
         <div class="container">
@@ -90,59 +82,5 @@
         </div>
     </footer>
 
-    <script>
-        let communityCount = localStorage.getItem('communityCount') || 1; // Compteur initial, sauvegardé localement
-
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCounter();
-            fetchVisitorCount(); // Appel de la fonction pour obtenir le compteur de visiteurs
-        });
-
-        function updateCounter() {
-            const countElement = document.getElementById('community-count');
-            countElement.innerText = communityCount;
-        }
-
-        document.getElementById('join-button').addEventListener('click', function() {
-            communityCount++;
-            localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur dans le localStorage
-
-            const countElement = document.getElementById('community-count');
-            
-            // Animation du compteur
-            countElement.classList.remove('fadeIn');
-            void countElement.offsetWidth; // Force un reflow
-            countElement.classList.add('fadeIn');
-
-            countElement.innerText = communityCount;
-
-            alert("Merci d'avoir rejoint la communauté ! Nous sommes maintenant " + communityCount + " membres.");
-        });
-
-        // Fonction pour récupérer le nombre total de visiteurs
-        function fetchVisitorCount() {
-            fetch('/api/visitors')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('visitor-count').innerText = data.count;
-                })
-                .catch(error => console.error('Erreur lors de la récupération du compteur de visiteurs:', error));
-        }
-
-        // Fonction pour enregistrer un nouveau visiteur
-        function incrementVisitorCount() {
-            fetch('/api/visitors', {
-                method: 'POST'
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('visitor-count').innerText = data.count;
-            })
-            .catch(error => console.error('Erreur lors de l\'incrémentation du compteur de visiteurs:', error));
-        }
-
-        // Incrémenter le compteur de visiteurs lors de chaque chargement de page
-        incrementVisitorCount();
-    </script>
 </body>
 </html>
