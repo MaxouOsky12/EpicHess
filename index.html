@@ -3,18 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rejoins Epic Hess, la communauté contre Epic Games et leurs pratiques douteuses. Unissons-nous pour un meilleur futur !">
-    <meta name="keywords" content="Epic Hess, Anti-Epic Games, Fortnite, communauté, boycott, justice">
-    <meta name="author" content="Epic Hess Team">
-    <meta property="og:title" content="Epic Hess - Rejoins la Révolution Anti-Epic Games">
-    <meta property="og:description" content="Unissons-nous contre les pratiques douteuses d'Epic Games. Rejoins la communauté Anti-Epic !">
-    <meta property="og:image" content="img/epic_hess_banner.png">
-    <meta property="og:url" content="https://epichess.com">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" href="img/favicon.png">
     <title>Epic Hess - Rejoins la Révolution Anti-Epic Games</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -67,7 +57,7 @@
     <section id="poll" class="poll-section">
         <div class="container">
             <h2>Sondage : Que pensez-vous d'Epic Games ?</h2>
-            <form>
+            <form id="vote-form">
                 <label>
                     <input type="radio" name="opinion" value="juste"> Juste
                 </label>
@@ -75,7 +65,7 @@
                     <input type="radio" name="opinion" value="injuste"> Injuste
                 </label>
                 <label>
-                    <input type="radio" name="opinion" value="pas certain"> Pas certain
+                    <input type="radio" name="opinion" value="pas_certain"> Pas certain
                 </label>
                 <button type="button" id="vote-button" class="cta-button">Voter</button>
             </form>
@@ -108,91 +98,6 @@
         </div>
     </footer>
 
-    <script>
-        // Compteur de la communauté
-        let communityCount = localStorage.getItem('communityCount') || 1; // Compteur initial sauvegardé localement
-
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCounter();
-            updateResults(); // Affiche les résultats du sondage au chargement
-        });
-
-        function updateCounter() {
-            const countElement = document.getElementById('community-count');
-            countElement.innerText = communityCount;
-        }
-
-        document.getElementById('join-button').addEventListener('click', function() {
-            communityCount++;
-            localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur dans le localStorage
-
-            const countElement = document.getElementById('community-count');
-            
-            // Animation du compteur
-            countElement.classList.remove('fadeIn');
-            void countElement.offsetWidth; // Force un reflow
-            countElement.classList.add('fadeIn');
-
-            countElement.innerText = communityCount;
-
-            alert("Merci d'avoir rejoint la communauté ! Nous sommes maintenant " + communityCount + " membres.");
-        });
-
-        // Sondage
-        let votes = {
-            juste: parseInt(localStorage.getItem('juste')) || 0,
-            injuste: parseInt(localStorage.getItem('injuste')) || 0,
-            'pas certain': parseInt(localStorage.getItem('pas certain')) || 0,
-        };
-
-        // Fonction pour mettre à jour l'affichage des résultats
-        function updateResults() {
-            const totalVotes = votes.juste + votes.injuste + votes['pas certain'];
-            
-            document.getElementById('juste-count').innerText = votes.juste;
-            document.getElementById('injuste-count').innerText = votes.injuste;
-            document.getElementById('pas-certain-count').innerText = votes['pas certain'];
-
-            // Calcul des pourcentages
-            const justePercentage = totalVotes > 0 ? ((votes.juste / totalVotes) * 100).toFixed(2) : 0;
-            const injustePercentage = totalVotes > 0 ? ((votes.injuste / totalVotes) * 100).toFixed(2) : 0;
-            const pasCertainPercentage = totalVotes > 0 ? ((votes['pas certain'] / totalVotes) * 100).toFixed(2) : 0;
-
-            // Affichage des pourcentages
-            document.getElementById('juste-percentage').innerText = justePercentage + '%';
-            document.getElementById('injuste-percentage').innerText = injustePercentage + '%';
-            document.getElementById('pas-certain-percentage').innerText = pasCertainPercentage + '%';
-        }
-
-        document.getElementById('vote-button').addEventListener('click', function() {
-            if (localStorage.getItem('hasVoted')) {
-                alert("Vous avez déjà voté !");
-                return; // Ne permet pas de voter à nouveau
-            }
-
-            const selectedOption = document.querySelector('input[name="opinion"]:checked');
-
-            if (selectedOption) {
-                const voteValue = selectedOption.value;
-                votes[voteValue]++;
-
-                // Sauvegarde des votes dans le localStorage
-                localStorage.setItem('juste', votes.juste);
-                localStorage.setItem('injuste', votes.injuste);
-                localStorage.setItem('pas certain', votes['pas certain']);
-                localStorage.setItem('hasVoted', true); // Enregistre que l'utilisateur a voté
-
-                updateResults();
-
-                // Affichage des résultats
-                document.getElementById('poll-results').style.display = 'block';
-                alert("Merci pour votre vote !");
-            } else {
-                alert("Veuillez sélectionner une option avant de voter.");
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
