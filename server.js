@@ -34,7 +34,9 @@ app.post('/api/vote', (req, res) => {
         }
         
         const votes = JSON.parse(data);
-        votes[vote]++;
+        if (votes[vote] !== undefined) {
+            votes[vote]++; // Incrémente le vote correspondant
+        }
 
         fs.writeFile(path.join(__dirname, 'data', 'votes.json'), JSON.stringify(votes, null, 2), (err) => {
             if (err) {
@@ -50,4 +52,3 @@ app.post('/api/vote', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Serveur en écoute sur le port ${PORT}`);
 });
-
