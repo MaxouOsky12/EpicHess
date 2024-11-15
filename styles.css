@@ -99,28 +99,27 @@ body {
     text-align: center;
 }
 
-.petition-section {
+.epic-section {
     background-color: #242424;
 }
 
-.why-sign-section {
+.petition-section {
     background-color: #333333;
-    color: #ecf0f1;
+}
+
+.why-sign-section {
+    background-color: #2d2d2d;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
-    margin-top: 20px;
-}
-
-ul li {
-    font-size: 1.2rem;
-    margin: 10px 0;
+.clash-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .clash-card {
@@ -141,10 +140,12 @@ ul li {
     margin-bottom: 10px;
 }
 
-.cta-button {
-    animation: fadeIn 1.5s ease-in;
+ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
+/* Animations */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -154,6 +155,22 @@ ul li {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.animate__fadeIn {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.animate__delay-1s {
+    animation-delay: 1s;
+}
+
+.animate__delay-2s {
+    animation-delay: 2s;
+}
+
+.cta-button {
+    animation: fadeIn 1.5s ease-in;
 }
 
 /* Footer */
@@ -184,4 +201,3 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #e74c3c;
 }
-
