@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Ajout des animations lorsque la page se charge
+    // Ajouter les animations à la page
     const fadeInElements = document.querySelectorAll('.cta-button, .highlight');
     fadeInElements.forEach(element => {
         element.classList.add('fadeIn');
     });
 
-    // Fonction pour l'animation du bouton
+    // Animations supplémentaires sur les boutons
     document.querySelector('.cta-button').addEventListener('mouseover', function() {
         this.style.transform = "scale(1.1)";
     });
