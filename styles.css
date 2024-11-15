@@ -1,25 +1,16 @@
-/* Application de la nouvelle police */
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #1c1c1c;
     color: #ffffff;
     line-height: 1.6;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out both;
 }
 
 /* Navbar */
@@ -29,11 +20,9 @@ body {
     align-items: center;
     background-color: #2d2d2d;
     padding: 15px 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
-    animation: fadeIn 1s ease-in-out 0.2s both;
 }
 
 .navbar .logo {
@@ -63,7 +52,7 @@ body {
     background-color: #e74c3c;
 }
 
-/* Hero Section */
+/* Banner/Hero */
 .banner {
     height: 80vh;
     background: url('img/hero_image.jpg') no-repeat center center/cover;
@@ -74,7 +63,6 @@ body {
     text-align: center;
     color: #ffffff;
     padding: 20px;
-    animation: fadeIn 1.5s ease-in-out 0.3s both;
 }
 
 .banner h1 {
@@ -98,52 +86,41 @@ body {
     border-radius: 30px;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
 }
 
 .cta-button:hover {
     background-color: #c0392b;
-    transform: scale(1.05);
 }
 
-/* Pourquoi Epic Sucks Section */
-.epic-section {
+/* Sections */
+.petition-section, .why-sign-section {
     padding: 60px 20px;
-    background-color: #242424;
     text-align: center;
 }
 
-.epic-section h2, .clash-card {
-    animation: fadeIn 1s ease-in-out 0.4s both;
+.petition-section {
+    background-color: #242424;
 }
 
-.clash-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.clash-card {
+.why-sign-section {
     background-color: #333333;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s;
-    animation: fadeIn 1s ease-in-out 0.6s both;
+    color: #ecf0f1;
 }
 
-.clash-card:hover {
-    transform: translateY(-5px);
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
-.clash-card h3 {
-    font-size: 1.5rem;
-    color: #e74c3c;
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.2rem;
     margin-bottom: 10px;
-}
-
-.clash-card p {
-    font-size: 1rem;
-    color: #bbb;
 }
 
 /* Footer */
@@ -152,7 +129,6 @@ footer {
     padding: 20px 0;
     text-align: center;
     color: #ecf0f1;
-    animation: fadeIn 1s ease-in-out 0.5s both;
 }
 
 footer p {
@@ -171,14 +147,28 @@ footer .social-links li {
 }
 
 footer .social-links a {
-    color: #ecf0f1;
-    font-size: 1rem;
     text-decoration: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 footer .social-links a:hover {
-    color: #e74c3c;
+    color: #c0392b;
 }
 
+/* Animations */
+.cta-button {
+    animation: fadeIn 1.5s ease-in;
+}
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
