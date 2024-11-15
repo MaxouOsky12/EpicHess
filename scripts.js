@@ -7,4 +7,3 @@ localStorage.setItem('visitorCount', visitorCount); // Sauvegarde le compteur da
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('visitor-count').innerText = `Visiteurs : ${visitorCount}`;
 });
-
