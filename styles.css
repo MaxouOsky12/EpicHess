@@ -1,16 +1,25 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Application de la nouvelle police */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-/* Body */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1c1c1c; /* Fond sombre */
-    color: #ffffff; /* Texte en blanc pour le contraste */
-    line-height: 1.6;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out both;
 }
 
 /* Navbar */
@@ -18,18 +27,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2d2d2d; /* Fond navbar */
+    background-color: #2d2d2d;
     padding: 15px 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
+    animation: fadeIn 1s ease-in-out 0.2s both;
 }
 
 .navbar .logo {
     font-size: 2rem;
     font-weight: bold;
-    color: #e74c3c; /* Rouge emblématique */
+    color: #e74c3c;
 }
 
 .nav-links {
@@ -50,10 +60,10 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #e74c3c; /* Rouge au survol */
+    background-color: #e74c3c;
 }
 
-/* Banner/Hero */
+/* Hero Section */
 .banner {
     height: 80vh;
     background: url('img/hero_image.jpg') no-repeat center center/cover;
@@ -64,6 +74,7 @@ body {
     text-align: center;
     color: #ffffff;
     padding: 20px;
+    animation: fadeIn 1.5s ease-in-out 0.3s both;
 }
 
 .banner h1 {
@@ -91,18 +102,18 @@ body {
 
 .cta-button:hover {
     background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 /* Pourquoi Epic Sucks Section */
 .epic-section {
     padding: 60px 20px;
-    background-color: #242424; /* Fond sombre */
+    background-color: #242424;
     text-align: center;
 }
 
-.epic-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+.epic-section h2, .clash-card {
+    animation: fadeIn 1s ease-in-out 0.4s both;
 }
 
 .clash-content {
@@ -112,11 +123,12 @@ body {
 }
 
 .clash-card {
-    background-color: #333333; /* Carte sombre */
+    background-color: #333333;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s;
+    animation: fadeIn 1s ease-in-out 0.6s both;
 }
 
 .clash-card:hover {
@@ -131,81 +143,16 @@ body {
 
 .clash-card p {
     font-size: 1rem;
-    color: #bbb; /* Texte plus clair */
-}
-
-/* Sondage Section */
-.poll-section {
-    padding: 20px;
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 8px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.poll-section h2 {
-    margin-bottom: 15px;
-}
-
-.poll-section form {
-    margin-bottom: 20px;
-}
-
-.poll-section label {
-    font-size: 1.2rem;
-}
-
-#poll-results h3 {
-    margin-top: 20px;
-    color: #e74c3c;
-}
-
-/* Communauté Section */
-.community-section {
-    padding: 60px 20px;
-    background-color: #2d2d2d; /* Fond sombre */
-    color: #ecf0f1;
-    text-align: center;
-}
-
-.community-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-#community-count {
-    font-size: 3rem;
-    color: #e74c3c;
-    font-weight: bold;
-}
-
-.community-section p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-#join-button {
-    background-color: #e74c3c;
-    color: #ffffff;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-#join-button:hover {
-    background-color: #c0392b;
+    color: #bbb;
 }
 
 /* Footer */
 footer {
-    background-color: #1c1c1c; /* Fond sombre */
+    background-color: #1c1c1c;
     padding: 20px 0;
     text-align: center;
     color: #ecf0f1;
+    animation: fadeIn 1s ease-in-out 0.5s both;
 }
 
 footer p {
@@ -233,4 +180,5 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #e74c3c;
 }
+
 
