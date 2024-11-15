@@ -94,7 +94,7 @@ body {
 }
 
 /* Sections */
-.epic-section, .petition-section, .why-sign-section {
+.epic-section, .petition-section {
     padding: 60px 20px;
     text-align: center;
 }
@@ -105,10 +105,6 @@ body {
 
 .petition-section {
     background-color: #333333;
-}
-
-.why-sign-section {
-    background-color: #2d2d2d;
 }
 
 h2 {
