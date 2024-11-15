@@ -1,9 +1,16 @@
-// Initialiser le compteur de visiteurs
-let visitorCount = localStorage.getItem('visitorCount') || 0;
-visitorCount++; // Incrémente le compteur
-localStorage.setItem('visitorCount', visitorCount); // Sauvegarde le compteur dans localStorage
-
-// Met à jour l'affichage du compteur de visiteurs
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('visitor-count').innerText = `Visiteurs : ${visitorCount}`;
+    // Ajout des animations lorsque la page se charge
+    const fadeInElements = document.querySelectorAll('.cta-button, .highlight');
+    fadeInElements.forEach(element => {
+        element.classList.add('fadeIn');
+    });
+
+    // Fonction pour l'animation du bouton
+    document.querySelector('.cta-button').addEventListener('mouseover', function() {
+        this.style.transform = "scale(1.1)";
+    });
+
+    document.querySelector('.cta-button').addEventListener('mouseout', function() {
+        this.style.transform = "scale(1)";
+    });
 });
