@@ -12,6 +12,7 @@ body {
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
+    text-align: center; /* Centrage global par défaut */
 }
 
 /* Navbar */
@@ -19,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(45, 45, 45, 0.8); /* Verre dépoli */
+    background: rgba(45, 45, 45, 0.8); /* Effet de verre dépoli */
     backdrop-filter: blur(10px);
     padding: 15px 30px;
     position: sticky;
@@ -61,42 +62,29 @@ body {
 /* Hero Section */
 .banner {
     height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero_image.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/hero_image.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     color: #ffffff;
+    text-align: center; /* Centrer le contenu textuel */
     padding: 20px;
     position: relative;
     overflow: hidden;
-}
-
-.banner::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(231, 76, 60, 0.2), transparent);
-    animation: spin 20s linear infinite;
-    z-index: 0;
 }
 
 .banner h1 {
     font-size: 4rem;
     margin-bottom: 20px;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-    z-index: 1;
 }
 
 .banner p {
     font-size: 1.5rem;
     margin-bottom: 30px;
     max-width: 600px;
-    z-index: 1;
 }
 
 .cta-button {
@@ -109,7 +97,6 @@ body {
     cursor: pointer;
     transition: all 0.3s ease, transform 0.2s;
     text-decoration: none;
-    z-index: 1;
 }
 
 .cta-button:hover {
@@ -118,38 +105,31 @@ body {
     box-shadow: 0 0 20px #ff7675;
 }
 
-/* Keyframes */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+/* Sections */
+.epic-section, .petition-section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.epic-section {
+    background-color: #242424;
 }
 
-.animate__fadeIn {
-    animation: fadeIn 1.5s ease-in;
+.petition-section {
+    background-color: #333333;
 }
 
-/* Cards Section */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
 .clash-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptation responsive */
+    gap: 30px;
     justify-content: center;
+    align-items: center; /* Centre les cartes verticalement */
 }
 
 .clash-card {
@@ -159,6 +139,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
+    text-align: left; /* Aligne le texte des cartes à gauche */
 }
 
 .clash-card:hover {
@@ -174,6 +155,8 @@ body {
 
 .clash-card p {
     color: #bdc3c7;
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 /* Footer */
@@ -191,12 +174,13 @@ footer .social-links {
 }
 
 footer .social-links li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 footer .social-links a {
     color: #ecf0f1;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
