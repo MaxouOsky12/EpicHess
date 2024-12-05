@@ -11,10 +11,8 @@ body {
     background-color: #1c1c1c;
     color: #ffffff;
     line-height: 1.6;
+    text-align: center; /* Centrage global */
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centre horizontalement le contenu principal */
 }
 
 /* Navbar */
@@ -22,9 +20,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Étend la navbar sur toute la largeur */
-    max-width: 1200px; /* Limite la largeur totale */
-    background: rgba(45, 45, 45, 0.8); /* Effet de verre dépoli */
+    width: 100%; /* Navbar s'étend sur toute la largeur */
+    max-width: 1200px; /* Centrage */
+    margin: 0 auto;
+    background: rgba(45, 45, 45, 0.8); /* Effet verre dépoli */
     backdrop-filter: blur(10px);
     padding: 15px 30px;
     position: sticky;
@@ -65,8 +64,7 @@ body {
 
 /* Hero Section */
 .banner {
-    height: 90vh;
-    width: 100%; /* Étend la section sur toute la largeur */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centre verticalement */
@@ -75,7 +73,6 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('img/hero_image.jpg') no-repeat center center/cover;
     position: relative;
-    overflow: hidden;
 }
 
 .banner::before {
@@ -91,7 +88,7 @@ body {
 }
 
 .banner h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
     z-index: 1;
@@ -100,7 +97,7 @@ body {
 .banner p {
     font-size: 1.5rem;
     margin-bottom: 30px;
-    max-width: 700px; /* Meilleure lisibilité pour les longues phrases */
+    max-width: 700px;
     z-index: 1;
 }
 
@@ -124,12 +121,10 @@ body {
 }
 
 /* Sections */
-.epic-section, .petition-section {
-    width: 100%; /* Étend la section sur toute la largeur */
-    max-width: 1200px; /* Centre et limite la largeur */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centre horizontalement */
+.section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 60px 20px;
     text-align: center;
 }
@@ -149,10 +144,9 @@ h2 {
 
 .clash-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cartes responsive */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive */
     gap: 30px;
-    width: 100%;
-    justify-content: center; /* Centre les colonnes horizontalement */
+    margin-top: 20px;
 }
 
 .clash-card {
@@ -186,7 +180,6 @@ h2 {
 footer {
     background: #1c1c1c;
     padding: 20px 0;
-    width: 100%;
     text-align: center;
     color: #ecf0f1;
 }
