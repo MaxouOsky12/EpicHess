@@ -12,7 +12,9 @@ body {
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
-    text-align: center; /* Centrage global par défaut */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement le contenu principal */
 }
 
 /* Navbar */
@@ -20,6 +22,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Étend la navbar sur toute la largeur */
+    max-width: 1200px; /* Limite la largeur totale */
     background: rgba(45, 45, 45, 0.8); /* Effet de verre dépoli */
     backdrop-filter: blur(10px);
     padding: 15px 30px;
@@ -61,30 +65,43 @@ body {
 
 /* Hero Section */
 .banner {
-    height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('img/hero_image.jpg') no-repeat center center/cover;
+    height: 90vh;
+    width: 100%; /* Étend la section sur toute la largeur */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    text-align: center; /* Centrer le contenu textuel */
-    padding: 20px;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/hero_image.jpg') no-repeat center center/cover;
     position: relative;
     overflow: hidden;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(231, 76, 60, 0.2), transparent);
+    animation: spin 20s linear infinite;
+    z-index: 0;
 }
 
 .banner h1 {
     font-size: 4rem;
     margin-bottom: 20px;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
 .banner p {
     font-size: 1.5rem;
     margin-bottom: 30px;
-    max-width: 600px;
+    max-width: 700px; /* Meilleure lisibilité pour les longues phrases */
+    z-index: 1;
 }
 
 .cta-button {
@@ -97,6 +114,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease, transform 0.2s;
     text-decoration: none;
+    z-index: 1;
 }
 
 .cta-button:hover {
@@ -107,6 +125,11 @@ body {
 
 /* Sections */
 .epic-section, .petition-section {
+    width: 100%; /* Étend la section sur toute la largeur */
+    max-width: 1200px; /* Centre et limite la largeur */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
     padding: 60px 20px;
     text-align: center;
 }
@@ -126,10 +149,10 @@ h2 {
 
 .clash-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptation responsive */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cartes responsive */
     gap: 30px;
-    justify-content: center;
-    align-items: center; /* Centre les cartes verticalement */
+    width: 100%;
+    justify-content: center; /* Centre les colonnes horizontalement */
 }
 
 .clash-card {
@@ -139,7 +162,7 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    text-align: left; /* Aligne le texte des cartes à gauche */
+    text-align: left; /* Texte aligné à gauche */
 }
 
 .clash-card:hover {
@@ -163,6 +186,7 @@ h2 {
 footer {
     background: #1c1c1c;
     padding: 20px 0;
+    width: 100%;
     text-align: center;
     color: #ecf0f1;
 }
@@ -171,10 +195,7 @@ footer .social-links {
     list-style: none;
     display: flex;
     justify-content: center;
-}
-
-footer .social-links li {
-    margin: 0 15px;
+    gap: 15px;
 }
 
 footer .social-links a {
@@ -186,4 +207,14 @@ footer .social-links a {
 
 footer .social-links a:hover {
     color: #e74c3c;
+}
+
+/* Keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
