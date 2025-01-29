@@ -1,26 +1,32 @@
-/* Reset CSS */
+/* ================== */
+/* 🎨 RESET CSS */
+/* ================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* ================== */
+/* 📌 BODY & GLOBAL STYLES */
+/* ================== */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #1c1c1c;
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
-    text-align: center; /* Centrage global par défaut */
+    text-align: center; /* Centrage global */
 }
 
-/* Navbar */
+/* ================== */
+/* 🔝 NAVBAR */
+/* ================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(45, 45, 45, 0.8); /* Effet de verre dépoli */
+    background: rgba(45, 45, 45, 0.8);
     backdrop-filter: blur(10px);
     padding: 15px 30px;
     position: sticky;
@@ -59,7 +65,9 @@ body {
     box-shadow: 0 0 10px #e74c3c;
 }
 
-/* Hero Section */
+/* ================== */
+/* 🏆 HERO SECTION */
+/* ================== */
 .banner {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
@@ -69,7 +77,6 @@ body {
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    text-align: center;
     padding: 20px;
     position: relative;
     overflow: hidden;
@@ -105,7 +112,9 @@ body {
     box-shadow: 0 0 20px #ff7675;
 }
 
-/* Sections */
+/* ================== */
+/* 📢 SECTIONS GÉNÉRALES */
+/* ================== */
 .epic-section, .petition-section {
     padding: 60px 20px;
     text-align: center;
@@ -124,7 +133,9 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Cartes de contenu */
+/* ================== */
+/* 📌 CARTES DE CONTENU */
+/* ================== */
 .clash-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -138,9 +149,8 @@ h2 {
     backdrop-filter: blur(8px);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
     text-align: left;
+    transition: all 0.3s ease;
 }
 
 .clash-card:hover {
@@ -151,16 +161,16 @@ h2 {
 .clash-card h3 {
     font-size: 1.5rem;
     color: #e74c3c;
-    margin-bottom: 10px;
 }
 
 .clash-card p {
     color: #bdc3c7;
     font-size: 1.1rem;
-    line-height: 1.4;
 }
 
-/* EpicHess Creator Section */
+/* ================== */
+/* 🎮 EPICHESS CREATOR SECTION */
+/* ================== */
 .map-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -174,9 +184,8 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
     width: 300px;
+    transition: transform 0.3s ease;
 }
 
 .map-card:hover {
@@ -201,9 +210,9 @@ h2 {
     padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
-    transition: transform 0.2s ease;
     border: none;
     margin-top: 10px;
+    transition: transform 0.2s ease;
 }
 
 .join-map:hover {
@@ -211,7 +220,9 @@ h2 {
     box-shadow: 0 0 10px #ff7675;
 }
 
-/* Footer */
+/* ================== */
+/* 🔚 FOOTER */
+/* ================== */
 footer {
     background: #1c1c1c;
     padding: 20px 0;
@@ -239,4 +250,3 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #e74c3c;
 }
-
