@@ -69,7 +69,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    text-align: center; /* Centrer le contenu textuel */
+    text-align: center;
     padding: 20px;
     position: relative;
     overflow: hidden;
@@ -124,12 +124,13 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Cartes de contenu */
 .clash-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptation responsive */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     justify-content: center;
-    align-items: center; /* Centre les cartes verticalement */
+    align-items: center;
 }
 
 .clash-card {
@@ -139,7 +140,7 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    text-align: left; /* Aligne le texte des cartes à gauche */
+    text-align: left;
 }
 
 .clash-card:hover {
@@ -157,6 +158,57 @@ h2 {
     color: #bdc3c7;
     font-size: 1.1rem;
     line-height: 1.4;
+}
+
+/* EpicHess Creator Section */
+.map-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.map-card {
+    background: rgba(51, 51, 51, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    width: 300px;
+}
+
+.map-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.7);
+}
+
+.map-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.map-code {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.join-map {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: none;
+    margin-top: 10px;
+}
+
+.join-map:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ff7675;
 }
 
 /* Footer */
