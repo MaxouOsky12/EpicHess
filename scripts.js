@@ -1,11 +1,11 @@
 // Initialiser le compteur de visiteurs
 let visitorCount = localStorage.getItem('visitorCount') || 0;
 visitorCount++; // Incrémente le compteur
-localStorage.setItem('visitorCount', visitorCount); // Sauvegarde le compteur dans localStorage
+localStorage.setItem('visitorCount', visitorCount); // Sauvegarde dans localStorage
 
 // Met à jour l'affichage du compteur de visiteurs
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('visitor-count').innerText = Visiteurs : ${visitorCount};
+    document.getElementById('visitor-count').innerText = `Visiteurs : ${visitorCount}`;
 });
 
 // Code pour le compteur de communauté
@@ -22,7 +22,7 @@ function updateCounter() {
 
 document.getElementById('join-button').addEventListener('click', function() {
     communityCount++;
-    localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur dans le localStorage
+    localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur
 
     const countElement = document.getElementById('community-count');
     
