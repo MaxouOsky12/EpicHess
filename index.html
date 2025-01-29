@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Epic Hess - Ensemble pour améliorer Epic Games.">
-    <meta name="keywords" content="Epic Hess, Epic Games, amélioration, communauté, jeux vidéo">
-    <meta name="author" content="Epic Hess Team">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Epic Hess - Construire un meilleur Epic Games">
-    <meta property="og:description" content="Unissons-nous pour améliorer Epic Games : propositions, critiques constructives et vision pour l'avenir.">
-    <meta property="og:image" content="https://epic-hess.vercel.app/EpicHess.jpg">
-    <meta property="og:url" content="https://epic-hess.vercel.app">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Epic Hess - Construire un meilleur Epic Games">
-    <meta name="twitter:description" content="Découvrez comment améliorer Epic Games avec nous !">
-    <meta name="twitter:image" content="https://epic-hess.vercel.app/EpicHess.jpg">
-
-    <link rel="icon" href="EpicHess.jpg" type="image/jpeg">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Epic Hess</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -36,84 +16,62 @@
             <li><a href="#problems" aria-label="Les problèmes actuels">Les Problèmes</a></li>
             <li><a href="#solutions" aria-label="Nos propositions">Nos Propositions</a></li>
             <li><a href="#petition" aria-label="Rejoindre le mouvement">Rejoignez le Mouvement</a></li>
+            <!-- Lien vers EpicHess Creator -->
+            <li><a href="#epichess-creator" aria-label="Epic Hess Creator">EpicHess Creator</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
-    <header>
-        <div class="banner">
-            <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
-            <p>Nous croyons en un Epic Games meilleur : plus équitable, plus transparent et plus à l'écoute des joueurs.</p>
-            <a href="#about" class="cta-button">Découvrez notre vision</a>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="epic-section">
-        <div class="container">
-            <h2>Notre Vision</h2>
-            <p>Epic Games est un acteur majeur dans l'industrie du jeu vidéo, mais nous pensons qu'il y a de la place pour des améliorations significatives. Chez <strong>Epic Hess</strong>, nous nous engageons à identifier les problèmes et à proposer des solutions concrètes qui bénéficient à la communauté des joueurs et aux développeurs.</p>
-        </div>
+    <section class="banner">
+        <h1>Bienvenue sur Epic Hess</h1>
+        <p>Rejoignez notre communauté et découvrez notre vision pour un avenir meilleur.</p>
+        <a href="#petition" class="cta-button">Rejoindre le Mouvement</a>
     </section>
 
-    <!-- Problems Section -->
-    <section id="problems" class="epic-section">
+    <!-- EpicHess Creator Section -->
+    <section id="epichess-creator" class="epic-section">
         <div class="container">
-            <h2>Les Problèmes Actuels</h2>
-            <div class="clash-content">
-                <div class="clash-card">
-                    <h3>Politique de Monétisation</h3>
-                    <p>Les microtransactions, bien que lucratives, sont souvent perçues comme intrusives et incitatives à l'excès.</p>
+            <h2>EpicHess Creator</h2>
+            <p>Découvrez nos créations sur Roblox et Fortnite, et suivez l'avancement de nos projets ! Rencontrez la team de mappers qui façonne ces univers passionnants.</p>
+
+            <!-- Creations -->
+            <div class="creator-creations">
+                <div class="creation">
+                    <h3>Créations Roblox</h3>
+                    <p>Nous avons développé plusieurs mondes et jeux sur Roblox. Explorez nos créations passionnantes et découvrez l'univers que nous avons créé !</p>
+                    <a href="https://www.roblox.com/users/yourusername" target="_blank" class="cta-button">Voir sur Roblox</a>
                 </div>
-                <div class="clash-card">
-                    <h3>Gestion des Suspensions</h3>
-                    <p>Des suspensions de comptes jugées injustifiées laissent les joueurs sans recours clair ou explications adéquates.</p>
-                </div>
-                <div class="clash-card">
-                    <h3>Manque de Support aux Développeurs</h3>
-                    <p>Les développeurs indépendants expriment souvent leur frustration face à un manque de visibilité sur l'Epic Games Store.</p>
-                </div>
-                <div class="clash-card">
-                    <h3>Confidentialité des Données</h3>
-                    <p>Les pratiques de collecte de données suscitent des inquiétudes parmi les utilisateurs, notamment sur la transparence.</p>
+                <div class="creation">
+                    <h3>Créations Fortnite</h3>
+                    <p>Nos créations Fortnite incluent des cartes uniques et des expériences personnalisées. Rejoignez-nous dans l'aventure sur Fortnite !</p>
+                    <a href="https://www.fortnite.com/yourprofile" target="_blank" class="cta-button">Voir sur Fortnite</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="petition-section">
-        <div class="container">
-            <h2>Nos Propositions</h2>
-            <ul>
-                <li>🔍 Plus de transparence : Publier des rapports détaillés sur les politiques de données et les décisions importantes.</li>
-                <li>💬 Communication améliorée : Répondre plus rapidement et de manière claire aux demandes des joueurs et développeurs.</li>
-                <li>🎮 Un modèle de monétisation plus équitable : Réduire les microtransactions excessives et offrir des options gratuites équilibrées.</li>
-                <li>🌟 Soutenir les développeurs indépendants : Mettre en avant les jeux indépendants avec des campagnes marketing dédiées.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Petition Section -->
-    <section id="petition" class="petition-section">
-        <div class="container">
-            <h2>Rejoignez le Mouvement</h2>
-            <p>Participez au changement ! Signez notre pétition pour faire entendre votre voix auprès d'Epic Games.</p>
-            <a href="https://www.mesopinions.com/petition/autres/epichess/236696?source=link&tmstp=1732897102&p=petition" target="_blank" class="cta-button">Signer la Pétition</a>
+            <!-- Team Section -->
+            <h3>Rencontrez notre équipe de mappers :</h3>
+            <div class="team">
+                <div class="team-member">
+                    <img src="team-member1.jpg" alt="Mapper 1">
+                    <h4>Mapper 1</h4>
+                    <p>Expert en création de mondes sur Roblox et Fortnite. Passionné par la construction d'univers interactifs.</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member2.jpg" alt="Mapper 2">
+                    <h4>Mapper 2</h4>
+                    <p>Spécialisé dans les cartes Fortnite avec des expériences uniques. Toujours à la recherche de nouvelles idées créatives.</p>
+                </div>
+                <!-- Ajouter plus de membres de l'équipe ici -->
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>Epic Hess © 2024 - Tous droits réservés.</p>
-            <ul class="social-links">
-                <li><a href="https://www.reddit.com/r/EpicHess123/">Reddit</a></li>
-                <li><a href="https://discord.gg/DDHdYhzh">Discord</a></li>
-                <li><a href="https://youtube.com/@epichess-o4g?feature=shared">YouTube</a></li>
-            </ul>
-        </div>
+        <p>&copy; 2025 Epic Hess. Tous droits réservés.</p>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
+
