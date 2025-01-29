@@ -1,27 +1,37 @@
-// Compteur de visiteurs
+// Initialiser le compteur de visiteurs
 let visitorCount = localStorage.getItem('visitorCount') || 0;
-visitorCount++;
-localStorage.setItem('visitorCount', visitorCount);
+visitorCount++; // Incrémente le compteur
+localStorage.setItem('visitorCount', visitorCount); // Sauvegarde le compteur dans localStorage
 
 // Met à jour l'affichage du compteur de visiteurs
 document.addEventListener('DOMContentLoaded', function() {
-    const visitorElement = document.getElementById('visitor-count');
-    if (visitorElement) {
-        visitorElement.innerText = `Visiteurs : ${visitorCount}`;
-    }
+    document.getElementById('visitor-count').innerText = Visiteurs : ${visitorCount};
 });
 
-// Compteur de joueurs testant les maps
-document.addEventListener('DOMContentLoaded', function () {
-    let playersCount = localStorage.getItem('playersCount') || 0;
-    document.getElementById('players-count').innerText = playersCount;
+// Code pour le compteur de communauté
+let communityCount = localStorage.getItem('communityCount') || 1; // Compteur initial, sauvegardé localement
 
-    document.querySelectorAll('.join-map').forEach(button => {
-        button.addEventListener('click', function () {
-            playersCount++;
-            localStorage.setItem('playersCount', playersCount);
-            document.getElementById('players-count').innerText = playersCount;
-            alert("Merci d'avoir testé notre map !");
-        });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    updateCounter();
+});
+
+function updateCounter() {
+    const countElement = document.getElementById('community-count');
+    countElement.innerText = communityCount;
+}
+
+document.getElementById('join-button').addEventListener('click', function() {
+    communityCount++;
+    localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur dans le localStorage
+
+    const countElement = document.getElementById('community-count');
+    
+    // Animation du compteur
+    countElement.classList.remove('fadeIn');
+    void countElement.offsetWidth; // Force un reflow
+    countElement.classList.add('fadeIn');
+
+    countElement.innerText = communityCount;
+
+    alert("Merci d'avoir rejoint la communauté ! Nous sommes maintenant " + communityCount + " membres.");
 });
