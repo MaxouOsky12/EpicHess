@@ -1,66 +1,37 @@
 // Initialiser le compteur de visiteurs
 let visitorCount = localStorage.getItem('visitorCount') || 0;
-visitorCount++;
-localStorage.setItem('visitorCount', visitorCount);
+visitorCount++; // Incrémente le compteur
+localStorage.setItem('visitorCount', visitorCount); // Sauvegarde le compteur dans localStorage
 
 // Met à jour l'affichage du compteur de visiteurs
-document.addEventListener('DOMContentLoaded', function () {
-    const visitorElement = document.getElementById('visitor-count');
-    if (visitorElement) {
-        visitorElement.innerText = `Visiteurs : ${visitorCount}`;
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('visitor-count').innerText = Visiteurs : ${visitorCount};
 });
 
-// Initialiser le compteur de communauté
-let communityCount = localStorage.getItem('communityCount') || 1;
+// Code pour le compteur de communauté
+let communityCount = localStorage.getItem('communityCount') || 1; // Compteur initial, sauvegardé localement
 
-// Fonction pour mettre à jour le compteur de communauté
+document.addEventListener('DOMContentLoaded', function() {
+    updateCounter();
+});
+
 function updateCounter() {
     const countElement = document.getElementById('community-count');
-    if (countElement) {
-        countElement.innerText = communityCount;
-    }
+    countElement.innerText = communityCount;
 }
 
-// Fonction appelée lors du clic ou du toucher sur "Rejoindre"
-function handleJoin(event) {
-    event.preventDefault(); // Évite le double déclenchement sur mobile
+document.getElementById('join-button').addEventListener('click', function() {
     communityCount++;
-    localStorage.setItem('communityCount', communityCount);
-    
+    localStorage.setItem('communityCount', communityCount); // Sauvegarde le nouveau compteur dans le localStorage
+
     const countElement = document.getElementById('community-count');
-    if (countElement) {
-        countElement.innerText = communityCount;
+    
+    // Animation du compteur
+    countElement.classList.remove('fadeIn');
+    void countElement.offsetWidth; // Force un reflow
+    countElement.classList.add('fadeIn');
 
-        // Animation avec une classe CSS
-        countElement.classList.add('fadeIn');
-        setTimeout(() => countElement.classList.remove('fadeIn'), 500);
-    }
+    countElement.innerText = communityCount;
 
-    alert(`Merci d'avoir rejoint la communauté ! Nous sommes maintenant ${communityCount} membres.`);
-}
-
-// Fonction pour réinitialiser les compteurs
-function resetCounters(event) {
-    event.preventDefault();
-    localStorage.removeItem('visitorCount');
-    localStorage.removeItem('communityCount');
-    location.reload(); // Recharge la page pour voir les changements
-}
-
-// Ajouter les événements après chargement du DOM
-document.addEventListener('DOMContentLoaded', function () {
-    updateCounter();
-
-    const joinButton = document.getElementById('join-button');
-    if (joinButton) {
-        joinButton.addEventListener('click', handleJoin);
-        joinButton.addEventListener('touchstart', handleJoin); // Optimisé pour mobile
-    }
-
-    const resetButton = document.getElementById('reset-counter');
-    if (resetButton) {
-        resetButton.addEventListener('click', resetCounters);
-        resetButton.addEventListener('touchstart', resetCounters);
-    }
+    alert("Merci d'avoir rejoint la communauté ! Nous sommes maintenant " + communityCount + " membres.");
 });
