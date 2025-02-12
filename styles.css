@@ -134,7 +134,7 @@ h2 {
     align-items: center;
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(45deg, #2c3e50, #34495e);
+    background-color: #000000;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease-in-out;
@@ -205,4 +205,3 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #e74c3c;
 }
-
