@@ -122,41 +122,9 @@ body {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-}
-
-.clash-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
-
-.clash-card {
-    background: rgba(51, 51, 51, 0.9);
-    backdrop-filter: blur(8px);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-    text-align: left;
-}
-
-.clash-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.7);
-}
-
-.clash-card h3 {
-    font-size: 1.5rem;
-    color: #e74c3c;
-    margin-bottom: 10px;
-}
-
-.clash-card p {
-    color: #bdc3c7;
-    font-size: 1.1rem;
-    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Improved "Notre Vision" Section */
@@ -165,6 +133,11 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
 }
 
 #about .container {
@@ -173,9 +146,10 @@ h2 {
 }
 
 #about p {
-    font-size: 1.2rem;
-    color: #ddd;
+    font-size: 1.3rem;
+    color: #ecf0f1;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 #about .vision-image {
@@ -184,6 +158,23 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+#about .vision-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer */
