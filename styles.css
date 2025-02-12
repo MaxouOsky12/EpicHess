@@ -12,7 +12,7 @@ body {
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
-    text-align: center; /* Centrage global par défaut */
+    text-align: center;
 }
 
 /* Navbar */
@@ -20,13 +20,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(45, 45, 45, 0.8); /* Effet de verre dépoli */
+    background: rgba(45, 45, 45, 0.8);
     backdrop-filter: blur(10px);
     padding: 15px 30px;
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background: rgba(45, 45, 45, 1);
 }
 
 .navbar .logo {
@@ -53,23 +59,25 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a:focus {
     background: linear-gradient(45deg, #e74c3c, #c0392b);
     color: #ffffff;
     box-shadow: 0 0 10px #e74c3c;
+    outline: 2px solid #e74c3c;
+    outline-offset: 3px;
 }
 
 /* Hero Section */
 .banner {
     height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                 url('img/hero_image.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    text-align: center; /* Centrer le contenu textuel */
+    text-align: center;
     padding: 20px;
     position: relative;
     overflow: hidden;
@@ -97,12 +105,20 @@ body {
     cursor: pointer;
     transition: all 0.3s ease, transform 0.2s;
     text-decoration: none;
+    animation: pulse 2s infinite ease-in-out;
 }
 
-.cta-button:hover {
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.cta-button:hover, .cta-button:focus {
     background: linear-gradient(45deg, #ff7675, #d63031);
     transform: scale(1.1);
     box-shadow: 0 0 20px #ff7675;
+    outline: 2px solid #ff7675;
 }
 
 /* Sections */
@@ -126,10 +142,10 @@ h2 {
 
 .clash-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptation responsive */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     justify-content: center;
-    align-items: center; /* Centre les cartes verticalement */
+    align-items: center;
 }
 
 .clash-card {
@@ -139,12 +155,12 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    text-align: left; /* Aligne le texte des cartes à gauche */
+    text-align: left;
 }
 
 .clash-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.7);
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
 }
 
 .clash-card h3 {
@@ -154,7 +170,7 @@ h2 {
 }
 
 .clash-card p {
-    color: #bdc3c7;
+    color: #ffffff;
     font-size: 1.1rem;
     line-height: 1.4;
 }
