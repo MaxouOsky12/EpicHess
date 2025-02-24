@@ -15,49 +15,130 @@
     <meta property="og:url" content="https://example.com">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="EpicHess.jpg" type="image/jpeg">
-    <title>Epic Hess - Améliorons Epic Games</title>
+    <title>Epic Hess - Nous Soutenir</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #222;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #222;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .support-options {
+                flex-direction: column;
+            }
+        }
+
+        .support-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .support-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .support-card {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff3b30;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo" aria-label="Epic Hess logo">Epic Hess</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
             <li><a href="index.html" aria-label="Accueil">Accueil</a></li>
             <li><a href="problemes.html" aria-label="Les problèmes actuels">Les Problèmes</a></li>
             <li><a href="solutions.html" aria-label="Nos propositions">Nos Propositions</a></li>
+            <li><a href="noussoutenir.html" aria-label="Nous soutenir">Nous soutenir</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header>
-        <div class="banner">
-            <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
-            <p>Nous croyons en un Epic Games meilleur : plus équitable, plus transparent et plus à l'écoute des joueurs.</p>
-            <a href="vision.html" class="cta-button">Découvrez notre vision</a>
-        </div>
-    </header>
-
-    <!-- Analyses Section -->
-    <section class="analyses-section">
-        <h2>Nos Analyses</h2>
-        <div class="analyses-container">
-            <div class="analyse-card">
-                <h3>Analyse 1 : Décisions stratégiques</h3>
-                <p>Une étude approfondie des décisions récentes d'Epic Games et leurs impacts sur les joueurs.</p>
-                <a href="analyse1.html" class="cta-button">Lire l'analyse</a>
+    <!-- Section Nous Soutenir -->
+    <section class="support-section">
+        <h2>Nous Soutenir</h2>
+        <p>Votre soutien est essentiel pour nous aider à proposer un Epic Games plus juste et transparent.</p>
+        <div class="support-options">
+            <div class="support-card">
+                <h3>Faire un don</h3>
+                <p>Aidez-nous financièrement à continuer nos analyses et propositions.</p>
+                <a href="#" class="cta-button">Faire un don</a>
             </div>
-            <div class="analyse-card">
-                <h3>Analyse 2 : Comparaison du marché</h3>
-                <p>Comparaison des pratiques d'Epic Games avec d'autres plateformes du marché.</p>
-                <a href="analyse2.html" class="cta-button">Lire l'analyse</a>
+            <div class="support-card">
+                <h3>Partager notre cause</h3>
+                <p>Faites connaître Epic Hess en partageant notre site sur les réseaux sociaux.</p>
+                <a href="#" class="cta-button">Partager</a>
             </div>
-            <div class="analyse-card">
-                <h3>Analyse 3 : Tendances et perceptions</h3>
-                <p>Les avis de la communauté et les tendances émergentes dans l'industrie du jeu vidéo.</p>
-                <a href="analyse3.html" class="cta-button">Lire l'analyse</a>
+            <div class="support-card">
+                <h3>Rejoindre notre communauté</h3>
+                <p>Participez aux discussions et faites entendre votre voix.</p>
+                <a href="https://discord.gg/DDHdYhzh" class="cta-button">Rejoindre Discord</a>
             </div>
         </div>
     </section>
@@ -74,13 +155,10 @@
         </div>
     </footer>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Epic Hess",
-        "url": "https://example.com"
-    }
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
     </script>
 </body>
 </html>
