@@ -2,54 +2,91 @@
 <html lang="fr">
 
 <head>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Solutions - Epic Hess</title>
+    <meta name="description" content="Epic Hess - Ensemble pour améliorer Epic Games et offrir une meilleure expérience aux joueurs.">
+    <meta name="keywords" content="Epic Hess, Epic Games, amélioration, communauté, jeux vidéo, boutique en ligne, analyse, tendances">
+    <meta name="author" content="Epic Hess Team">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Epic Hess - Améliorons Epic Games">
+    <meta property="og:description" content="Découvrez nos analyses et propositions pour un Epic Games plus équitable et transparent.">
+    <meta property="og:image" content="https://example.com/epichess-banner.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="EpicHess.jpg" type="image/jpeg">
+    <title>Epic Hess - Améliorons Epic Games</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header class="banner">
-        <h1>Nos Solutions pour un Epic Games Meilleur</h1>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" aria-label="Epic Hess logo">Epic Hess</div>
+        <ul class="nav-links">
+            <li><a href="index.html" aria-label="Accueil">Accueil</a></li>
+            <li><a href="problemes.html" aria-label="Les problèmes actuels">Les Problèmes</a></li>
+            <li><a href="solutions.html" aria-label="Nos propositions">Nos Propositions</a></li>
+            <li><a href="noussoutenir.html" aria-label="Nous soutenir">Nous soutenir</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="banner">
+            <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
+            <p>Nous croyons en un Epic Games meilleur : plus équitable, plus transparent et plus à l'écoute des joueurs.</p>
+            <a href="vision.html" class="cta-button">Découvrez notre vision</a>
+        </div>
     </header>
 
-    <section class="content-section">
-        <h2>Des améliorations concrètes pour Epic Games</h2>
-        <div class="solution-card">
-            <h3>✅ Un support client plus efficace</h3>
-            <p>Améliorer le support en ajoutant un <strong>live chat</strong> 24/7 avec de vrais conseillers.</p>
-        </div>
-        <div class="solution-card">
-            <h3>✅ Plus de transparence et de communication</h3>
-            <p>Des annonces claires sur les mises à jour et les décisions, ainsi que des sondages communautaires.</p>
-        </div>
-        <div class="solution-card">
-            <h3>✅ Un système de remboursement plus flexible</h3>
-            <p>Offrir des remboursements plus simples et adaptés, comme Steam.</p>
-        </div>
-        <div class="solution-card">
-            <h3>✅ Liberté pour les développeurs</h3>
-            <p>Permettre aux studios de <strong>choisir</strong> entre exclusivité et non-exclusivité.</p>
-        </div>
-        <div class="solution-card">
-            <h3>✅ Un programme d’incitation multi-plateforme</h3>
-            <p>Encourager la sortie des jeux <strong>sur plusieurs plateformes en même temps</strong> avec des bonus financiers.</p>
-        </div>
-        <div class="solution-card">
-            <h3>✅ Une boutique plus ergonomique</h3>
-            <p>Refonte de l’interface avec <strong>plus d’options de tri et des avis utilisateurs</strong>.</p>
-        </div>
-        <div class="solution-card">
-            <h3>✅ Un anti-triche plus efficace</h3>
-            <p>Améliorer les outils contre la triche et sanctionner plus rapidement les joueurs fautifs.</p>
+    <!-- Analyses Section -->
+    <section class="analyses-section">
+        <h2>Nos Analyses</h2>
+        <div class="analyses-container">
+            <div class="analyse-card">
+                <h3>Analyse 1 : Décisions stratégiques</h3>
+                <p>Une étude approfondie des décisions récentes d'Epic Games et leurs impacts sur les joueurs.</p>
+                <a href="analyse1.html" class="cta-button">Lire l'analyse</a>
+            </div>
+            <div class="analyse-card">
+                <h3>Analyse 2 : Comparaison du marché</h3>
+                <p>Comparaison des pratiques d'Epic Games avec d'autres plateformes du marché.</p>
+                <a href="analyse2.html" class="cta-button">Lire l'analyse</a>
+            </div>
+            <div class="analyse-card">
+                <h3>Analyse 3 : Tendances et perceptions</h3>
+                <p>Les avis de la communauté et les tendances émergentes dans l'industrie du jeu vidéo.</p>
+                <a href="analyse3.html" class="cta-button">Lire l'analyse</a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>Epic Hess © 2024 - Tous droits réservés.</p>
+        <div class="container">
+            <p>Epic Hess © 2024 - Tous droits réservés.</p>
+            <ul class="social-links">
+                <li><a href="https://www.reddit.com/r/EpicHessR/">Reddit</a></li>
+                <li><a href="https://discord.gg/DDHdYhzh">Discord</a></li>
+                <li><a href="https://youtube.com/@epichess-o4g?feature=shared">YouTube</a></li>
+            </ul>
+        </div>
     </footer>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Epic Hess",
+        "url": "https://example.com"
+    }
+    </script>
+
     <style>
+        /* Styles généraux */
         body {
             background-color: #111;
             color: white;
@@ -57,37 +94,66 @@
             margin: 0;
             padding: 0;
         }
-        .banner {
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 2rem;
-            font-weight: bold;
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
         }
-        .content-section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
+
+        /* Boutons */
+        .cta-button {
+            background: linear-gradient(135deg, #ff3b30, #d63031);
+            color: white;
+            padding: 14px 22px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 59, 48, 0.7);
+        }
+
+        /* Conteneur d'analyses */
+        .analyses-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Cartes d'analyses */
+        .analyse-card {
             background: #1c1c1c;
             color: #ecf0f1;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-            line-height: 1.6;
-        }
-        .solution-card {
-            background: #2c2c2c;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            transition: transform 0.3s ease;
         }
-        .solution-card h3 {
-            color: #e74c3c;
+
+        .analyse-card h3 {
+            color: #ff3b30;
         }
-        .solution-card p {
+
+        .analyse-card p {
+            font-size: 1rem;
             color: #bdc3c7;
+            margin-bottom: 10px;
         }
+
+        .analyse-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -95,22 +161,24 @@
             margin-top: 40px;
         }
 
-        /* Responsive design */
-        @media screen and (max-width: 768px) {
-            .content-section {
-                width: 90%;
-                padding: 20px;
-            }
-            .solution-card {
-                padding: 10px;
-            }
-            .banner {
-                font-size: 1.5rem;
-                padding: 30px 15px;
-            }
+        .social-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #ff3b30;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #d63031;
         }
     </style>
 </body>
-
 </html>
-
