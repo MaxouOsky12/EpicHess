@@ -2,63 +2,119 @@
 <html lang="fr">
 
 <head>
+    <!-- Script AMP -->
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+    <!-- Métadonnées -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Epic Hess - Ensemble pour améliorer Epic Games et offrir une meilleure expérience aux joueurs.">
     <meta name="keywords" content="Epic Hess, Epic Games, amélioration, communauté, jeux vidéo, boutique en ligne, analyse, tendances">
     <meta name="author" content="Epic Hess Team">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Partage Réseaux Sociaux) -->
     <meta property="og:title" content="Epic Hess - Améliorons Epic Games">
     <meta property="og:description" content="Découvrez nos analyses et propositions pour un Epic Games plus équitable et transparent.">
     <meta property="og:image" content="https://example.com/epichess-banner.jpg">
     <meta property="og:url" content="https://example.com">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Icône du site -->
     <link rel="icon" href="EpicHess.jpg" type="image/jpeg">
+
+    <!-- Titre -->
     <title>Epic Hess - Améliorons Epic Games</title>
+
+    <!-- Liens CSS et JS -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
+    <!-- 🔥 Données structurées SEO 🔥 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Epic Hess",
+        "url": "https://example.com",
+        "logo": "https://example.com/EpicHess.jpg",
+        "foundingDate": "2024",
+        "founder": {
+            "@type": "Person",
+            "name": "Munoz Maxence"
+        },
+        "description": "Epic Hess est une initiative visant à améliorer Epic Games et offrir une meilleure expérience aux joueurs.",
+        "sameAs": [
+            "https://www.reddit.com/r/EpicHessR/",
+            "https://discord.gg/DDHdYhzh",
+            "https://youtube.com/@epichess-o4g"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Quand Epic Hess a-t-il été créé ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Epic Hess a été fondé en 2024 pour améliorer Epic Games et offrir une meilleure expérience aux joueurs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment soutenir Epic Hess ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vous pouvez nous soutenir en rejoignant notre communauté Discord, en partageant notre site ou en faisant un don."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo" aria-label="Epic Hess logo">Epic Hess</div>
+        <div class="logo">Epic Hess</div>
         <ul class="nav-links">
-            <li><a href="index.html" aria-label="Accueil">Accueil</a></li>
-            <li><a href="problemes.html" aria-label="Les problèmes actuels">Les Problèmes</a></li>
-            <li><a href="solutions.html" aria-label="Nos propositions">Nos Propositions</a></li>
-            <li><a href="noussoutenir.html" aria-label="Nous soutenir">Nous soutenir</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="problemes.html">Les Problèmes</a></li>
+            <li><a href="solutions.html">Nos Propositions</a></li>
+            <li><a href="noussoutenir.html">Nous soutenir</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
-    <header>
-        <div class="banner">
-            <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
-            <p>Nous croyons en un Epic Games meilleur : plus équitable, plus transparent et plus à l'écoute des joueurs.</p>
-            <a href="vision.html" class="cta-button">Découvrez notre vision</a>
-        </div>
+    <header class="banner">
+        <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
+        <p>Nous croyons en un Epic Games meilleur : plus équitable, plus transparent et plus à l'écoute des joueurs.</p>
+        <a href="vision.html" class="cta-button">Découvrez notre vision</a>
     </header>
 
-    <!-- Analyses Section -->
+    <!-- Section Analyses -->
     <section class="analyses-section">
         <h2>Nos Analyses</h2>
         <div class="analyses-container">
             <div class="analyse-card">
                 <h3>Analyse 1 : Décisions stratégiques</h3>
-                <p>Une étude approfondie des décisions récentes d'Epic Games et leurs impacts sur les joueurs.</p>
+                <p>Une étude approfondie des décisions récentes d'Epic Games.</p>
                 <a href="analyse1.html" class="cta-button">Lire l'analyse</a>
             </div>
             <div class="analyse-card">
                 <h3>Analyse 2 : Comparaison du marché</h3>
-                <p>Comparaison des pratiques d'Epic Games avec d'autres plateformes du marché.</p>
+                <p>Comparaison des pratiques d'Epic Games avec d'autres plateformes.</p>
                 <a href="analyse2.html" class="cta-button">Lire l'analyse</a>
             </div>
             <div class="analyse-card">
                 <h3>Analyse 3 : Tendances et perceptions</h3>
-                <p>Les avis de la communauté et les tendances émergentes dans l'industrie du jeu vidéo.</p>
+                <p>Les avis de la communauté et les tendances de l'industrie.</p>
                 <a href="analyse3.html" class="cta-button">Lire l'analyse</a>
             </div>
         </div>
@@ -71,26 +127,17 @@
             <ul class="social-links">
                 <li><a href="https://www.reddit.com/r/EpicHessR/">Reddit</a></li>
                 <li><a href="https://discord.gg/DDHdYhzh">Discord</a></li>
-                <li><a href="https://youtube.com/@epichess-o4g?feature=shared">YouTube</a></li>
+                <li><a href="https://youtube.com/@epichess-o4g">YouTube</a></li>
             </ul>
         </div>
     </footer>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Epic Hess",
-        "url": "https://example.com"
-    }
-    </script>
-
+    <!-- Styles -->
     <style>
-        /* Styles généraux */
         body {
             background-color: #111;
             color: white;
-            font-family: "Arial", sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -100,17 +147,15 @@
             gap: 15px;
         }
 
-        /* Boutons */
         .cta-button {
             background: linear-gradient(135deg, #ff3b30, #d63031);
             color: white;
             padding: 14px 22px;
             border-radius: 30px;
             font-weight: bold;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            border: none;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
         }
 
         .cta-button:hover {
@@ -118,7 +163,6 @@
             box-shadow: 0 0 15px rgba(255, 59, 48, 0.7);
         }
 
-        /* Conteneur d'analyses */
         .analyses-container {
             display: flex;
             justify-content: center;
@@ -127,58 +171,33 @@
             margin-top: 20px;
         }
 
-        /* Cartes d'analyses */
         .analyse-card {
             background: #1c1c1c;
             color: #ecf0f1;
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             width: 300px;
             transition: transform 0.3s ease;
-        }
-
-        .analyse-card h3 {
-            color: #ff3b30;
-        }
-
-        .analyse-card p {
-            font-size: 1rem;
-            color: #bdc3c7;
-            margin-bottom: 10px;
         }
 
         .analyse-card:hover {
             transform: translateY(-5px);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
             background: #111;
-            margin-top: 40px;
         }
 
         .social-links {
             list-style: none;
-            padding: 0;
             display: flex;
             justify-content: center;
             gap: 15px;
         }
-
-        .social-links a {
-            color: #ff3b30;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #d63031;
-        }
     </style>
+
 </body>
 </html>
