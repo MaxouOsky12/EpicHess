@@ -2,203 +2,183 @@
 <html lang="fr">
 
 <head>
-    <!-- Script AMP -->
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
-    <!-- Métadonnées -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Epic Hess - Ensemble pour améliorer Epic Games et offrir une meilleure expérience aux joueurs.">
-    <meta name="keywords" content="Epic Hess, Epic Games, amélioration, communauté, jeux vidéo, boutique en ligne, analyse, tendances">
+    <meta name="description" content="Epic Hess : Plateforme d'analyse et de propositions stratégiques pour l'amélioration continue de l'écosystème Epic Games.">
+    <meta name="keywords" content="Epic Hess, Epic Games, amélioration, communauté, jeux vidéo, boutique en ligne, analyse, tendances, équité, transparence">
     <meta name="author" content="Epic Hess Team">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph (Partage Réseaux Sociaux) -->
-    <meta property="og:title" content="Epic Hess - Améliorons Epic Games">
-    <meta property="og:description" content="Découvrez nos analyses et propositions pour un Epic Games plus équitable et transparent.">
+    <meta property="og:title" content="Epic Hess | Vers un Écosystème Epic Games Optimisé">
+    <meta property="og:description" content="Découvrez nos analyses indépendantes et nos propositions constructives pour un Epic Games Store plus équitable et transparent.">
     <meta property="og:image" content="https://example.com/epichess-banner.jpg">
     <meta property="og:url" content="https://example.com">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Icône du site -->
     <link rel="icon" href="EpicHess.jpg" type="image/jpeg">
 
-    <!-- Titre -->
-    <title>Epic Hess - Améliorons Epic Games</title>
+    <title>Epic Hess | Optimisation de l'Expérience Joueur Epic Games</title>
 
-    <!-- Liens CSS et JS -->
     <link rel="stylesheet" href="styles.css">
+    
     <script src="script.js" defer></script>
 
-    <!-- 🔥 Données structurées SEO 🔥 -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Epic Hess",
-        "url": "https://example.com",
-        "logo": "https://example.com/EpicHess.jpg",
-        "foundingDate": "2024",
-        "founder": {
-            "@type": "Person",
-            "name": "Munoz Maxence"
-        },
-        "description": "Epic Hess est une initiative visant à améliorer Epic Games et offrir une meilleure expérience aux joueurs.",
-        "sameAs": [
-            "https://www.reddit.com/r/EpicHessR/",
-            "https://discord.gg/DDHdYhzh",
-            "https://youtube.com/@epichess-o4g"
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Quand Epic Hess a-t-il été créé ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Epic Hess a été fondé en 2024 pour améliorer Epic Games et offrir une meilleure expérience aux joueurs."
-                }
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Epic Hess",
+            "url": "https://example.com",
+            "logo": "https://example.com/EpicHess.jpg",
+            "foundingDate": "2024",
+            "founder": {
+                "@type": "Person",
+                "name": "Munoz Maxence"
             },
-            {
-                "@type": "Question",
-                "name": "Comment soutenir Epic Hess ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vous pouvez nous soutenir en rejoignant notre communauté Discord, en partageant notre site ou en faisant un don."
-                }
-            }
-        ]
-    }
+            "description": "Epic Hess est une initiative visant à améliorer Epic Games et offrir une meilleure expérience aux joueurs.",
+            "sameAs": [
+                "https://www.reddit.com/r/EpicHessR/",
+                "https://discord.gg/DDHdYhzh",
+                "https://youtube.com/@epichess-o4g"
+            ]
+        }
     </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Quelle est la mission principale d'Epic Hess ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Epic Hess a été fondé en 2024 avec pour mission d'analyser, d'évaluer et de proposer des améliorations concrètes pour optimiser l'expérience utilisateur et l'équité au sein de l'écosystème Epic Games."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment la communauté peut-elle contribuer aux initiatives d'Epic Hess ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "La contribution est essentielle. Vous pouvez nous soutenir activement en participant aux discussions sur notre communauté Discord, en partageant nos analyses sur les réseaux sociaux, ou en faisant un don pour soutenir nos recherches."
+                    }
+                }
+            ]
+        }
+    </script>
+    
+    <style>
+        /* CSS REVISÉ - Voir section ci-dessous pour le détail */
+    </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">Epic Hess</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="problemes.html">Les Problèmes</a></li>
-            <li><a href="solutions.html">Nos Propositions</a></li>
-            <li><a href="noussoutenir.html">Nous soutenir</a></li>
-            <li><a href="about.html">À propos</a></li>
-        </ul>
+    <nav class="main-navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="nav-brand">EPIC HESS</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Accueil</a></li>
+                <li><a href="problemes.html" class="nav-item">Diagnostic Actuel</a></li>
+                <li><a href="solutions.html" class="nav-item">Feuille de Route</a></li>
+                <li><a href="noussoutenir.html" class="nav-item support-cta">Soutenir l'Initiative</a></li>
+                <li><a href="about.html" class="nav-item">À propos</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="banner">
-        <h1>Bienvenue chez <span class="highlight">Epic Hess</span></h1>
-        <p>Nous croyons en un Epic Games meilleur : plus équitable, plus transparent et plus à l'écoute des joueurs.</p>
-        <a href="vision.html" class="cta-button">Découvrez notre vision</a>
+    <header class="hero-section">
+        <div class="container hero-content">
+            <p class="hero-subheading">Plateforme Indépendante d'Analyse et de Proposition</p>
+            <h1>Optimiser l'<span class="highlight-text">Expérience Joueur</span> sur Epic Games</h1>
+            <p class="lead-text">Nous œuvrons pour un écosystème Epic Games plus équitable, transparent et en phase avec les attentes de sa communauté mondiale de joueurs.</p>
+            <div class="hero-actions">
+                <a href="vision.html" class="cta-button primary-cta">Découvrir notre Vision Stratégique</a>
+                <a href="problemes.html" class="cta-button secondary-cta">Lire le Diagnostic</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Section Analyses -->
-    <section class="analyses-section">
-        <h2>Nos Analyses</h2>
-        <div class="analyses-container">
-            <div class="analyse-card">
-                <h3>Analyse 1 : Décisions stratégiques</h3>
-                <p>Une étude approfondie des décisions récentes d'Epic Games.</p>
-                <a href="analyse1.html" class="cta-button">Lire l'analyse</a>
+    <section class="analysis-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Nos Analyses Approfondies</h2>
+            <p class="section-description">Notre équipe propose une veille et des études régulières pour éclairer la communauté sur les enjeux actuels.</p>
+            <div class="card-grid">
+                <div class="analysis-card">
+                    <h3>🔍 Analyse Stratégique : Les Décisions Récentes</h3>
+                    <p>Étude factuelle et critique des orientations stratégiques récentes d'Epic Games et de leurs impacts sur les développeurs et la communauté.</p>
+                    <a href="analyse1.html" class="card-link">Consulter le Rapport Complet</a>
+                </div>
+                <div class="analysis-card">
+                    <h3>⚖️ Benchmark de Marché : Équité & Pratiques</h3>
+                    <p>Comparaison détaillée des pratiques de l'Epic Games Store avec celles des plateformes concurrentes en termes de parts de revenus et de fonctionnalités.</p>
+                    <a href="analyse2.html" class="card-link">Accéder au Benchmark</a>
+                </div>
+                <div class="analysis-card">
+                    <h3>📈 Tendances Communautaires & Perception</h3>
+                    <p>Compilation des données d'opinion, tendances d'utilisation et attentes de la communauté internationale pour guider nos propositions.</p>
+                    <a href="analyse3.html" class="card-link">Explorer les Données</a>
+                </div>
             </div>
-            <div class="analyse-card">
-                <h3>Analyse 2 : Comparaison du marché</h3>
-                <p>Comparaison des pratiques d'Epic Games avec d'autres plateformes.</p>
-                <a href="analyse2.html" class="cta-button">Lire l'analyse</a>
-            </div>
-            <div class="analyse-card">
-                <h3>Analyse 3 : Tendances et perceptions</h3>
-                <p>Les avis de la communauté et les tendances de l'industrie.</p>
-                <a href="analyse3.html" class="cta-button">Lire l'analyse</a>
+        </div>
+    </section>
+    
+    <section class="engagement-section section-padding bg-dark-alt">
+        <div class="container">
+            <h2 class="section-title">Notre Engagement</h2>
+            <p class="section-description">Epic Hess est une initiative de la communauté, pour la communauté.</p>
+            <div class="commitment-points">
+                <div class="commitment-item">
+                    <h4>Indépendance Totale</h4>
+                    <p>Nos analyses sont menées sans aucune affiliation ou influence externe, garantissant une objectivité maximale.</p>
+                </div>
+                <div class="commitment-item">
+                    <h4>Méthodologie Rigoureuse</h4>
+                    <p>Chaque proposition est étayée par des données vérifiables et des études de cas détaillées.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Epic Hess © 2024 - Tous droits réservés | <a href="privacy.html">Politique de confidentialité</a></p>
-            <ul class="social-links">
-                <li><a href="https://www.reddit.com/r/EpicHessR/">Reddit</a></li>
-                <li><a href="https://discord.gg/DDHdYhzh">Discord</a></li>
-                <li><a href="https://youtube.com/@epichess-o4g">YouTube</a></li>
-            </ul>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-info">
+                <h3>EPIC HESS</h3>
+                <p>Analyse & Optimisation pour l'Écosystème Epic Games.</p>
+                <p class="copyright-text">© <span id="currentYear">2024</span> Epic Hess. Tous droits réservés.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="vision.html">Notre Vision</a></li>
+                    <li><a href="team.html">L'Équipe</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ressources Légales</h4>
+                <ul>
+                    <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                    <li><a href="cgu.html">Conditions d'Utilisation</a></li>
+                    <li><a href="mentions.html">Mentions Légales</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-links-col">
+                <h4>Rejoignez la Discussion</h4>
+                <ul class="social-links">
+                    <li><a href="https://www.reddit.com/r/EpicHessR/" target="_blank">Reddit</a></li>
+                    <li><a href="https://discord.gg/DDHdYhzh" target="_blank">Discord</a></li>
+                    <li><a href="https://youtube.com/@epichess-o4g" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
-    <!-- Styles -->
-    <style>
-        body {
-            background-color: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #ff3b30, #d63031);
-            color: white;
-            padding: 14px 22px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 59, 48, 0.7);
-        }
-
-        .analyses-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .analyse-card {
-            background: #1c1c1c;
-            color: #ecf0f1;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            width: 300px;
-            transition: transform 0.3s ease;
-        }
-
-        .analyse-card:hover {
-            transform: translateY(-5px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-        }
-
-        .social-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-    </style>
-
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
